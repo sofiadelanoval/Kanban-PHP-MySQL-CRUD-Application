@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --paper-line: #e0e0e0;
+    --bg-color: #fdfdfd;
+}
+
+body {
+    font-family: 'Homemade Apple', sans-serif;
+    background-color: var(--bg-color);
+    background-image: 
+        linear-gradient(var(--paper-line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--paper-line) 1px, transparent 1px);
+    background-size: 20px 20px;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h3 { font-family: 'Homemade Apple'; color: #333; }
+
+.container { max-width: 1200px; margin: 0 auto; }
+
+.input-card {
+    background: white;
+    padding: 15px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 4px 4px 0px #333;
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.input-card label {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.1rem;
+    align-self: center;
+    margin-left: 10px;
+}
+
+input, select, textarea {
+    padding: 10px;
+    border: 2px solid #333;
+    border-radius: 4px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.1rem;
+    width: 100%; 
+    background: #fff;
+}
+
+.btn-add {
+    height: 46px;
+    margin-top: 0;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Lora', sans-serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn-cancel {
+    height: 46px;
+    margin-top: 0;
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Lora', sans-serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.btn-cancel:hover { background: #c82333; }
+
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+.column {
+    background: rgba(255, 255, 255, 0.5);
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    min-height: 200px;
+}
+
+.column-title {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.post-it {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1.2rem;
+    position: relative;
+    transition: transform 0.2s;
+    color: #333;
+}
+
+.post-it:hover { transform: scale(1.02) rotate(-1deg); z-index: 10; box-shadow: 5px 5px 10px rgba(0,0,0,0.2); }
+
+.bg-planning { background-color: #9bc7fd; }
+.bg-design { background-color: #b4e2de; }
+.bg-development { background-color: #9dd356; }
+.bg-testing { background-color: #64c788; }
+.bg-launch { background-color: #40aabf }
+.bg-maintenance { background-color: #4086bf }
+
+.post-it h4 { margin: 0 0 5px 0; font-weight: bold; }
+.post-it p { margin: 0 0 10px 0; font-size: 0.9rem; }
+.post-it .meta { font-size: 0.8rem; color: rgba(0,0,0,0.6); display: flex; justify-content: space-between; margin-bottom: 10px;}
+
+.actions { display: flex; justify-content: flex-end; gap: 5px; border-top: 1px dashed rgba(0,0,0,0.2); padding-top: 5px; }
+.btn-icon { text-decoration: none; color: #333; padding: 2px; border-radius: 4px; transition: 0.2s; }
+.btn-icon:hover { background: rgba(0,0,0,0.1); }
+.material-symbols-outlined { font-size: 20px; }
+
+@media (max-width: 768px) {
+    .kanban-board { grid-template-columns: 1fr; }
+}
